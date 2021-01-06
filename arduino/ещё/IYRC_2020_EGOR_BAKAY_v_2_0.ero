@@ -1,0 +1,115 @@
+
+#include "functions_codes.h"
+
+#define speed 3
+#define black 500
+#define white 900
+
+int main ()
+{
+    mcu_initialization();
+    
+    forward(); forward(); vpered();// left(); forward(); 
+    
+    left(); 
+    forward(); 
+    right(); 
+    forward(); 
+    right(); 
+    forward(); 
+    left(); 
+    forward(); 
+    forward();
+    left(); 
+    forward(); 
+    right(); 
+    forward(); 
+    left(); 
+    
+    //forward(); 
+    //left(); 
+    forward(); 
+    vpered2();
+    
+    return 0;
+}
+
+void vpered2() {
+    dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,5);
+    dc_motor(RIGHT_MOTOR_1,FORWARD_DIRECTION,2);
+    delay(0,0,0,300);
+    dc_motor(LEFT_MOTOR_1,BACKWARD_DIRECTION,5);
+    dc_motor(RIGHT_MOTOR_1,BACKWARD_DIRECTION,5);
+    delay(0,0,0,50);
+    dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,0);
+    dc_motor(RIGHT_MOTOR_1,FORWARD_DIRECTION,0);
+    delay(0,0,0,500);
+}
+
+void vpered() {
+    dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,5);
+    dc_motor(RIGHT_MOTOR_1,FORWARD_DIRECTION,5);
+    delay(0,0,0,90);
+    dc_motor(LEFT_MOTOR_1,BACKWARD_DIRECTION,5);
+    dc_motor(RIGHT_MOTOR_1,BACKWARD_DIRECTION,5);
+    delay(0,0,0,50);
+    dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,0);
+    dc_motor(RIGHT_MOTOR_1,FORWARD_DIRECTION,0);
+    delay(0,0,0,500);
+}
+
+void left() {
+    dc_motor(LEFT_MOTOR_1,BACKWARD_DIRECTION,5);
+    dc_motor(RIGHT_MOTOR_1,FORWARD_DIRECTION,5);
+    delay(0,0,0,100);
+    while (ir(1,black,NONE)==TRUE) {}
+    while (ir(1,white,SENSE)==TRUE) {}
+    while (ir(1,black,NONE)==TRUE) {}
+    delay(0,0,0,50);
+    dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,5);
+    dc_motor(RIGHT_MOTOR_1,BACKWARD_DIRECTION,5);
+    delay(0,0,0,50);
+    dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,0);
+    dc_motor(RIGHT_MOTOR_1,FORWARD_DIRECTION,0);
+    delay(0,0,0,500);
+}
+
+void right() {
+    dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,5);
+    dc_motor(RIGHT_MOTOR_1,BACKWARD_DIRECTION,5);
+    delay(0,0,0,100);
+    while (ir(2,black,NONE)==TRUE) {}
+    while (ir(2,white,SENSE)==TRUE) {}
+    while (ir(2,black,NONE)==TRUE) {}
+    delay(0,0,0,50);
+    dc_motor(LEFT_MOTOR_1,BACKWARD_DIRECTION,5);
+    dc_motor(RIGHT_MOTOR_1,FORWARD_DIRECTION,5);
+    delay(0,0,0,50);
+    dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,0);
+    dc_motor(RIGHT_MOTOR_1,FORWARD_DIRECTION,0);
+    delay(0,0,0,500);
+}
+
+void forward() {
+    while(!(ir(1,black,NONE) == TRUE && ir(2,black,NONE)==TRUE)) {
+        if (ir(1,white,SENSE) == TRUE && ir(2,white,SENSE)==TRUE) {
+            dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,speed);
+            dc_motor(RIGHT_MOTOR_1,FORWARD_DIRECTION,speed);
+        }
+        if (ir(2,black,NONE)==TRUE) { // ir(1,white,SENSE) == TRUE && 
+            dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,10);
+            dc_motor(RIGHT_MOTOR_1,BACKWARD_DIRECTION,10);
+        }
+        if (ir(1,black,NONE) == TRUE) { //  && ir(2,white,SENSE)==TRUE
+            dc_motor(LEFT_MOTOR_1,BACKWARD_DIRECTION,10);
+            dc_motor(RIGHT_MOTOR_1,FORWARD_DIRECTION,10);
+        }
+    }
+    dc_motor(LEFT_MOTOR_1,BACKWARD_DIRECTION,5);
+    dc_motor(RIGHT_MOTOR_1,BACKWARD_DIRECTION,5);
+    delay(0,0,0,50);
+    dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,0);
+    dc_motor(RIGHT_MOTOR_1,FORWARD_DIRECTION,0);
+    delay(0,0,0,500);
+}
+

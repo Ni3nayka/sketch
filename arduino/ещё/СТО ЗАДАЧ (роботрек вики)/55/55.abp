@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+<Pages collapsible-pages="yes" drawer-with-page="yes">
+<Page page-color="255 255 255" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="1920">
+<PageBlocks>
+<Block genus-name="robotrack_UART1" id="214">
+<Location>
+<X>385</X>
+<Y>31</Y>
+</Location>
+<Comment>
+<Text/>
+<Location>
+<X>483</X>
+<Y>0</Y>
+</Location>
+<BoxSize>
+<Width>150</Width>
+<Height>100</Height>
+</BoxSize>
+</Comment>
+<Plug>
+<BlockConnector con-block-id="213" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="delay" id="256">
+<Location>
+<X>182</X>
+<Y>298</Y>
+</Location>
+<BeforeBlockId>245</BeforeBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="257" connector-kind="socket" connector-type="number" init-type="number" label="милисекунд" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="number" id="257">
+<Label>1000</Label>
+<Location>
+<X>346</X>
+<Y>301</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="256" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_getColor" id="493">
+<Location>
+<X>320</X>
+<Y>271</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="245" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_displayCircle" id="245">
+<Location>
+<X>182</X>
+<Y>196</Y>
+</Location>
+<BeforeBlockId>224</BeforeBlockId>
+<AfterBlockId>256</AfterBlockId>
+<Sockets num-sockets="4">
+<BlockConnector con-block-id="246" connector-kind="socket" connector-type="number" init-type="number" label="X" position-type="single"/>
+<BlockConnector con-block-id="247" connector-kind="socket" connector-type="number" init-type="number" label="Y" position-type="single"/>
+<BlockConnector con-block-id="248" connector-kind="socket" connector-type="number" init-type="number" label="R" position-type="single"/>
+<BlockConnector con-block-id="493" connector-kind="socket" connector-type="number" init-type="number" label="цвет" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="number" id="248">
+<Label>50</Label>
+<Location>
+<X>320</X>
+<Y>247</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="245" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="247">
+<Label>120</Label>
+<Location>
+<X>320</X>
+<Y>223</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="245" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="246">
+<Label>160</Label>
+<Location>
+<X>320</X>
+<Y>199</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="245" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_displayClear" id="224">
+<Location>
+<X>182</X>
+<Y>172</Y>
+</Location>
+<BeforeBlockId>212</BeforeBlockId>
+<AfterBlockId>245</AfterBlockId>
+</Block>
+<Block genus-name="robotrack_colorSensorSetup" id="215">
+<Location>
+<X>183</X>
+<Y>58</Y>
+</Location>
+<BeforeBlockId>213</BeforeBlockId>
+<Sockets num-sockets="4">
+<BlockConnector con-block-id="216" connector-kind="socket" connector-type="number" init-type="number" label="красный светодиод" position-type="single"/>
+<BlockConnector con-block-id="217" connector-kind="socket" connector-type="number" init-type="number" label="синий светодиод" position-type="single"/>
+<BlockConnector con-block-id="218" connector-kind="socket" connector-type="number" init-type="number" label="зеленый светодиод" position-type="single"/>
+<BlockConnector con-block-id="219" connector-kind="socket" connector-type="number" init-type="number" label="датчик" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_inputPort1" id="219">
+<Location>
+<X>517</X>
+<Y>133</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="215" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_outputPort2" id="218">
+<Location>
+<X>517</X>
+<Y>109</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="215" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_outputPort3" id="217">
+<Location>
+<X>517</X>
+<Y>85</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="215" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_outputPort1" id="216">
+<Location>
+<X>517</X>
+<Y>61</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="215" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_displaySetup" id="213">
+<Location>
+<X>183</X>
+<Y>28</Y>
+</Location>
+<BeforeBlockId>212</BeforeBlockId>
+<AfterBlockId>215</AfterBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="214" connector-kind="socket" connector-type="number" init-type="number" label="UART" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="program" id="212">
+<Location>
+<X>20</X>
+<Y>20</Y>
+</Location>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="213" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Установка" position-type="single"/>
+<BlockConnector con-block-id="224" connector-kind="socket" connector-type="cmd" init-type="cmd" label="цикл" position-type="single"/>
+</Sockets>
+</Block>
+</PageBlocks>
+</Page>
+</Pages>
+</cb:CODEBLOCKS>

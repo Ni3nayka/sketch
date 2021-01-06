@@ -1,0 +1,6 @@
+pip install pyinstaller
+cd C:\Users\BUCHEK\Desktop\test
+pyinstaller -F -w -i "C:\Users\BUCHEK\Desktop\test\image.ico" checkers_BARS_v_3_0.py
+-F сделать все одним файлом
+-w не запускать консоль
+-i добавить картинку

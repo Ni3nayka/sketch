@@ -1,0 +1,171 @@
+#include "functions_codes.h"
+
+int in1, in2, in3;
+
+
+int main (){
+    mcu_initialization();
+    while(1) if (but() == 1) test();
+    //int i = analogRead(1);
+    return 0;
+}
+
+void test() {
+  forward();
+  forward();
+  right();
+  forward();
+  left();
+  forward();
+  if (dist() == 1) {
+    take();
+    left();
+    forward();
+    forward();
+    quit();
+    left();
+    forward();
+    right();
+  }
+  else {
+    left();
+    forward();
+    forward();
+    take();
+    left();
+    forward();
+    forward();
+    quit();
+    left();
+    forward();
+    left();
+  }
+  forward();
+  left();
+  forward();
+  if (dist() == 1) {
+    take();
+    left();
+    forward();
+    forward();
+    quit();
+    left();
+    forward();
+    right();
+  }
+  else {
+    left();
+    forward();
+    forward();
+    take();
+    left();
+    forward();
+    forward();
+    quit();
+    left();
+    forward();
+    left();
+  }
+  forward();
+  startMotor(1, 5);
+  startMotor(2, 5);
+  delay(0,0,0,200);
+  startMotor(1, 0);
+  startMotor(2, 0);
+  
+}
+
+void quit() {
+  run_servo(1, -90);
+  run_servo(2, 90);
+  delay(0,0,0,1000);
+  startMotor(1, -5);
+  startMotor(2, -5);
+  delay(0,0,0,500);
+  startMotor(1, 0);
+  startMotor(2, 0);
+  delay(0,0,0,1000);
+}
+
+void take() {
+  run_servo(1, 45);
+  run_servo(2, -45);
+  delay(0,0,0,1000);
+}
+
+void forward() {
+  int e;
+  dat(); 
+  while (((in1 > 5) || (in2 > 5)) && (dist() == 0)) { 
+    dat(); 
+    e = (in1 - in2)*0.5; // *2.3
+    startMotor(1, 5 + e);
+    startMotor(2, 5 - e);
+  }
+  if (dist()) {
+    startMotor(1, -5);
+    startMotor(2, -5);
+    delay(0,0,0,10);
+  }
+  startMotor(1, 0);
+  startMotor(2, 0);
+  delay(0,0,0,1000);
+}
+
+int dist() {
+    int f = 0;
+    if (analogRead(4) > 500) f = 1; 
+    return f;
+}
+
+void left() {
+  dat();
+  startMotor(1, -5);
+  startMotor(2, 5*1.3);
+  while (in1 <= 5) dat();
+  while (in1 >= 5) dat(); 
+  while (in1 <= 5) dat();
+  startMotor(1, 0);
+  startMotor(2, 0);
+  delay(0,0,0,1000);
+}
+
+void right() {
+  dat();
+  startMotor(1, 5*1.3);
+  startMotor(2, -5);
+  while (in2 <= 5) dat();
+  while (in2 >= 5) dat();
+  while (in2 <= 5) dat();
+  startMotor(1, 0);
+  startMotor(2, 0);
+  delay(0,0,0,1000);
+}
+
+void dat() {
+    in1 = map(analogRead(1), 650, 1023, 0, 10);
+    in2 = map(analogRead(2), 650, 1023, 0, 10);
+    if (analogRead(3) > 500) in3 = 1;
+    else in3 = 0;
+}
+
+int map(int x, int in_min, int in_max, int out_min, int out_max) {
+  return (x - in_min)*(out_max - out_min)/(in_max - in_min) + out_min;
+}
+
+int but() { // button
+    int f = 0;
+    if(button(5, PRESSED)) f = 1;
+    return f;
+}
+
+void startMotor(int number, int speed) {
+    if (number == 1) {
+        if (speed > 0) dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,speed);
+        else dc_motor(LEFT_MOTOR_1,BACKWARD_DIRECTION,speed);
+    }
+    if (number == 2) {
+        if (speed > 0) dc_motor(RIGHT_MOTOR_1,FORWARD_DIRECTION,speed);
+        else dc_motor(RIGHT_MOTOR_1,BACKWARD_DIRECTION,speed);
+    }
+}

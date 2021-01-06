@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+<Pages collapsible-pages="yes" drawer-with-page="yes">
+<Page page-color="128 128 128" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="1920">
+<PageBlocks>
+<Block genus-name="delay" id="235">
+<Location>
+<X>182</X>
+<Y>172</Y>
+</Location>
+<BeforeBlockId>655</BeforeBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="236" connector-kind="socket" connector-type="number" init-type="number" label="милисекунд" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="number" id="236">
+<Label>1000</Label>
+<Location>
+<X>346</X>
+<Y>175</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="235" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_getColor" id="214">
+<Location>
+<X>384</X>
+<Y>145</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="655" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_builtInRGB" id="655">
+<Location>
+<X>182</X>
+<Y>142</Y>
+</Location>
+<BeforeBlockId>205</BeforeBlockId>
+<AfterBlockId>235</AfterBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="214" connector-kind="socket" connector-type="number" init-type="number" label="цвет" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_colorSensorSetup" id="441">
+<Location>
+<X>183</X>
+<Y>28</Y>
+</Location>
+<BeforeBlockId>205</BeforeBlockId>
+<Sockets num-sockets="4">
+<BlockConnector con-block-id="442" connector-kind="socket" connector-type="number" init-type="number" label="красный светодиод" position-type="single"/>
+<BlockConnector con-block-id="443" connector-kind="socket" connector-type="number" init-type="number" label="синий светодиод" position-type="single"/>
+<BlockConnector con-block-id="444" connector-kind="socket" connector-type="number" init-type="number" label="зеленый светодиод" position-type="single"/>
+<BlockConnector con-block-id="445" connector-kind="socket" connector-type="number" init-type="number" label="датчик" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_inputPort1" id="445">
+<Location>
+<X>517</X>
+<Y>103</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="441" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_outputPort2" id="444">
+<Location>
+<X>517</X>
+<Y>79</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="441" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_outputPort3" id="443">
+<Location>
+<X>517</X>
+<Y>55</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="441" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_outputPort1" id="442">
+<Location>
+<X>517</X>
+<Y>31</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="441" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="program" id="205">
+<Location>
+<X>20</X>
+<Y>20</Y>
+</Location>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="441" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Установка" position-type="single"/>
+<BlockConnector con-block-id="655" connector-kind="socket" connector-type="cmd" init-type="cmd" label="цикл" position-type="single"/>
+</Sockets>
+</Block>
+</PageBlocks>
+</Page>
+</Pages>
+</cb:CODEBLOCKS>

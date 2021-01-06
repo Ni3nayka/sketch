@@ -1,0 +1,63 @@
+
+#include "functions_codes.h"
+
+void left();
+void right();
+void forward();
+void perecrestoc();
+
+#define porog 1010
+#define speed 3
+
+int main ()
+{
+    mcu_initialization();
+    forward();
+    while(1)
+    {
+        //if (!((ir(1,porog,NONE)==TRUE) && (ir(2,porog,NONE)==TRUE))) forward();
+        //else 
+    }
+    return 0;
+}
+
+void left() {
+    
+}
+
+void right() {
+    
+}
+
+void forward() {
+    while ((ir(1,porog,SENSE)==TRUE) || (ir(4,porog,SENSE)==TRUE)) {
+        if ((ir(1,porog,SENSE)==TRUE) && (ir(4,porog,SENSE)==TRUE)) {
+            dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,speed);
+            dc_motor(RIGHT_MOTOR_1,FORWARD_DIRECTION,speed);
+        }
+        else if ((ir(1,porog,NONE)==TRUE) && (ir(4,porog,SENSE)==TRUE)) {
+            dc_motor(LEFT_MOTOR_1,BACKWARD_DIRECTION,6);
+            dc_motor(RIGHT_MOTOR_1,FORWARD_DIRECTION,6);
+            //delay(0,0,0,50);
+        }
+        else if ((ir(1,porog,SENSE)==TRUE) && (ir(4,porog,NONE)==TRUE)) {
+            dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,6);
+            dc_motor(RIGHT_MOTOR_1,BACKWARD_DIRECTION,6);
+            //delay(0,0,0,50);
+        }
+        else {
+            dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,0);
+            dc_motor(RIGHT_MOTOR_1,BACKWARD_DIRECTION,0);
+        } 
+    }
+    dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,speed);
+    dc_motor(RIGHT_MOTOR_1,FORWARD_DIRECTION,speed);
+    delay(0,0,0,100);
+    dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,0);
+    dc_motor(RIGHT_MOTOR_1,FORWARD_DIRECTION,0);
+}
+
+void perecrestoc() {
+    
+}
+

@@ -1,0 +1,4 @@
+1 Russian
+2 Maths
+3 Physics
+4 Literature

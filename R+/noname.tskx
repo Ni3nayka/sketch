@@ -1,0 +1,58 @@
+﻿version 4.00
+cm_version 1.0
+platform CM-530
+- 
+o main
+o begin
+o load param_dest:motion:-:50 param_src:dec_num:1
+o wait param_src:motion:-:51 lop:== param_src:bool_num:1 rop:then
+o end
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 

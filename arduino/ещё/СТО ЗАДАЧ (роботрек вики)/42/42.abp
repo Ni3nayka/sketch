@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+<Pages collapsible-pages="yes" drawer-with-page="yes">
+<Page page-color="128 128 128" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="1920">
+<PageBlocks>
+<Block genus-name="robotrack_bigServo" id="529">
+<Location>
+<X>182</X>
+<Y>63</Y>
+</Location>
+<BeforeBlockId>207</BeforeBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="530" connector-kind="socket" connector-type="number" init-type="number" label="порт" position-type="single"/>
+<BlockConnector con-block-id="244" connector-kind="socket" connector-type="number" init-type="number" label="угол" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="addition" id="244">
+<Location>
+<X>352</X>
+<Y>90</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="529" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="231" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+<BlockConnector con-block-id="208" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_Gyro" id="208">
+<Location>
+<X>450</X>
+<Y>93</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="244" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="209" connector-kind="socket" connector-type="string" init-type="string" label="ось" position-type="single"/>
+<BlockConnector con-block-id="210" connector-kind="socket" connector-type="string" init-type="string" label="режим" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_GyroModeFiltered" id="210">
+<Label>усреднённый</Label>
+<Location>
+<X>594</X>
+<Y>117</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="208" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_GyroAxisX" id="209">
+<Location>
+<X>594</X>
+<Y>93</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="208" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="231">
+<Label>90</Label>
+<Location>
+<X>362</X>
+<Y>117</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="244" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_pwmOutPort1" id="530">
+<Location>
+<X>352</X>
+<Y>66</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="529" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="program" id="207">
+<Location>
+<X>20</X>
+<Y>20</Y>
+</Location>
+<Sockets num-sockets="2">
+<BlockConnector connector-kind="socket" connector-type="cmd" init-type="cmd" label="Установка" position-type="single"/>
+<BlockConnector con-block-id="529" connector-kind="socket" connector-type="cmd" init-type="cmd" label="цикл" position-type="single"/>
+</Sockets>
+</Block>
+</PageBlocks>
+</Page>
+</Pages>
+</cb:CODEBLOCKS>

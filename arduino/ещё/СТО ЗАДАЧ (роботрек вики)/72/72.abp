@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+<Pages collapsible-pages="yes" drawer-with-page="yes">
+<Page page-color="128 128 128" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="1920">
+<PageBlocks>
+<Block genus-name="variable_number" id="609">
+<Label>y</Label>
+<Location>
+<X>308</X>
+<Y>496</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="613" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="greater" id="613">
+<Location>
+<X>298</X>
+<Y>493</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="612" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+</Plug>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="609" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+<BlockConnector con-block-id="615" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+</Sockets>
+</Block>
+<Block genus-name="number" id="615">
+<Label>500</Label>
+<Location>
+<X>387</X>
+<Y>496</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="613" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="greater" id="604">
+<Location>
+<X>298</X>
+<Y>465</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="612" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+</Plug>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="606" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+<BlockConnector con-block-id="611" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+</Sockets>
+</Block>
+<Block genus-name="number" id="611">
+<Label>500</Label>
+<Location>
+<X>387</X>
+<Y>468</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="604" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_number" id="606">
+<Label>x</Label>
+<Location>
+<X>308</X>
+<Y>468</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="604" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="and" id="612">
+<Location>
+<X>258</X>
+<Y>465</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="183" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+</Plug>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="604" connector-kind="socket" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+<BlockConnector con-block-id="613" connector-kind="socket" connector-type="boolean" init-type="boolean" label="" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="variable_number" id="593">
+<Label>y</Label>
+<Location>
+<X>268</X>
+<Y>339</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="588" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="variable_number" id="592">
+<Label>x</Label>
+<Location>
+<X>268</X>
+<Y>210</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="586" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="greater" id="588">
+<Location>
+<X>258</X>
+<Y>336</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="182" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+</Plug>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="593" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+<BlockConnector con-block-id="589" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+</Sockets>
+</Block>
+<Block genus-name="number" id="589">
+<Label>500</Label>
+<Location>
+<X>347</X>
+<Y>339</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="588" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="587">
+<Label>500</Label>
+<Location>
+<X>347</X>
+<Y>210</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="586" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="greater" id="586">
+<Location>
+<X>258</X>
+<Y>207</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="181" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+</Plug>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="592" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+<BlockConnector con-block-id="587" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="bottom"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_readPortAnalog" id="584">
+<Location>
+<X>396</X>
+<Y>177</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="579" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="585" connector-kind="socket" connector-type="number" init-type="number" label="#" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_inputPort2" id="585">
+<Location>
+<X>690</X>
+<Y>177</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="584" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_readPortAnalog" id="582">
+<Location>
+<X>396</X>
+<Y>123</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="576" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="583" connector-kind="socket" connector-type="number" init-type="number" label="#" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_inputPort1" id="583">
+<Location>
+<X>690</X>
+<Y>123</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="582" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="setter_variable_number" id="579">
+<Location>
+<X>158</X>
+<Y>150</Y>
+</Location>
+<BeforeBlockId>576</BeforeBlockId>
+<AfterBlockId>181</AfterBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="580" connector-kind="socket" connector-type="number" init-type="number" label="переменная" position-type="single"/>
+<BlockConnector con-block-id="584" connector-kind="socket" connector-type="number" init-type="number" label="значение" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="variable_number" id="580">
+<Label>y</Label>
+<Location>
+<X>396</X>
+<Y>153</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="579" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="setter_variable_number" id="576">
+<Location>
+<X>158</X>
+<Y>96</Y>
+</Location>
+<BeforeBlockId>173</BeforeBlockId>
+<AfterBlockId>579</AfterBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="577" connector-kind="socket" connector-type="number" init-type="number" label="переменная" position-type="single"/>
+<BlockConnector con-block-id="582" connector-kind="socket" connector-type="number" init-type="number" label="значение" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="variable_number" id="577">
+<Label>x</Label>
+<Location>
+<X>396</X>
+<Y>99</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="576" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="if" id="181">
+<Location>
+<X>158</X>
+<Y>204</Y>
+</Location>
+<BeforeBlockId>579</BeforeBlockId>
+<AfterBlockId>182</AfterBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="586" connector-kind="socket" connector-type="boolean" init-type="boolean" label="условие" position-type="single"/>
+<BlockConnector con-block-id="184" connector-kind="socket" connector-type="cmd" init-type="cmd" label="то" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="if" id="182">
+<Location>
+<X>158</X>
+<Y>333</Y>
+</Location>
+<BeforeBlockId>181</BeforeBlockId>
+<AfterBlockId>183</AfterBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="588" connector-kind="socket" connector-type="boolean" init-type="boolean" label="условие" position-type="single"/>
+<BlockConnector con-block-id="192" connector-kind="socket" connector-type="cmd" init-type="cmd" label="то" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="if" id="183">
+<Location>
+<X>158</X>
+<Y>462</Y>
+</Location>
+<BeforeBlockId>182</BeforeBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="612" connector-kind="socket" connector-type="boolean" init-type="boolean" label="условие" position-type="single"/>
+<BlockConnector con-block-id="194" connector-kind="socket" connector-type="cmd" init-type="cmd" label="то" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_startMotor" id="194">
+<Location>
+<X>255</X>
+<Y>526</Y>
+</Location>
+<BeforeBlockId>183</BeforeBlockId>
+<AfterBlockId>187</AfterBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="195" connector-kind="socket" connector-type="number" init-type="number" label="порт" position-type="single"/>
+<BlockConnector con-block-id="196" connector-kind="socket" connector-type="number" init-type="number" label="скорость" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_startMotor" id="187">
+<Location>
+<X>255</X>
+<Y>580</Y>
+</Location>
+<BeforeBlockId>194</BeforeBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="188" connector-kind="socket" connector-type="number" init-type="number" label="порт" position-type="single"/>
+<BlockConnector con-block-id="189" connector-kind="socket" connector-type="number" init-type="number" label="скорость" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="number" id="189">
+<Label>40</Label>
+<Location>
+<X>411</X>
+<Y>607</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="187" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_motorPort2" id="188">
+<Location>
+<X>411</X>
+<Y>583</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="187" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="196">
+<Label>40</Label>
+<Location>
+<X>411</X>
+<Y>553</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="194" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_motorPort1" id="195">
+<Location>
+<X>411</X>
+<Y>529</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="194" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_stopMotor" id="192">
+<Location>
+<X>255</X>
+<Y>369</Y>
+</Location>
+<BeforeBlockId>182</BeforeBlockId>
+<AfterBlockId>197</AfterBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="193" connector-kind="socket" connector-type="number" init-type="number" label="порт" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_startMotor" id="197">
+<Location>
+<X>255</X>
+<Y>399</Y>
+</Location>
+<BeforeBlockId>192</BeforeBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="198" connector-kind="socket" connector-type="number" init-type="number" label="порт" position-type="single"/>
+<BlockConnector con-block-id="199" connector-kind="socket" connector-type="number" init-type="number" label="скорость" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="number" id="199">
+<Label>40</Label>
+<Location>
+<X>411</X>
+<Y>426</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="197" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_motorPort2" id="198">
+<Location>
+<X>411</X>
+<Y>402</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="197" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_motorPort1" id="193">
+<Location>
+<X>421</X>
+<Y>372</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="192" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_startMotor" id="184">
+<Location>
+<X>255</X>
+<Y>240</Y>
+</Location>
+<BeforeBlockId>181</BeforeBlockId>
+<AfterBlockId>190</AfterBlockId>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="185" connector-kind="socket" connector-type="number" init-type="number" label="порт" position-type="single"/>
+<BlockConnector con-block-id="186" connector-kind="socket" connector-type="number" init-type="number" label="скорость" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_stopMotor" id="190">
+<Location>
+<X>255</X>
+<Y>294</Y>
+</Location>
+<BeforeBlockId>184</BeforeBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="191" connector-kind="socket" connector-type="number" init-type="number" label="порт" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_motorPort2" id="191">
+<Location>
+<X>421</X>
+<Y>297</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="190" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="186">
+<Label>40</Label>
+<Location>
+<X>411</X>
+<Y>267</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="184" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_motorPort1" id="185">
+<Location>
+<X>411</X>
+<Y>243</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="184" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="program" id="173">
+<Location>
+<X>14</X>
+<Y>53</Y>
+</Location>
+<Sockets num-sockets="2">
+<BlockConnector connector-kind="socket" connector-type="cmd" init-type="cmd" label="Установка" position-type="single"/>
+<BlockConnector con-block-id="576" connector-kind="socket" connector-type="cmd" init-type="cmd" label="цикл" position-type="single"/>
+</Sockets>
+</Block>
+</PageBlocks>
+</Page>
+</Pages>
+</cb:CODEBLOCKS>

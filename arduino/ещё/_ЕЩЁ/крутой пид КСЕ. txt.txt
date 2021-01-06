@@ -1,0 +1,106 @@
+#include "functions_codes.h"
+
+int DAT[5],MIN[5],MAX[5];
+float DATM[5],EI[10];
+float M1,M2,U,Emax,Emin,Ew;
+float Kw=5;
+float Ke=3;
+float Kp=1;
+float Ki=0.3;
+float Kd=8.5;
+float Kkub=0.0;
+float Mo=8;
+float Ep=0,Ekub=0,Ei=0,Ed=0;
+
+int main ()
+{
+mcu_initialization();
+while(1)
+{
+Ei=0;
+for(int i=0;i<5;i++)
+{
+DAT[i]=analogRead(i+1);
+if(MAX[i]<DAT[i])
+{
+MAX[i]=DAT[i];
+}
+if(MIN[i]>DAT[i]||MIN[i]==0)
+{
+MIN[i]=DAT[i];
+}
+DATM[i]=2.55*(100.0-(100.0*(DAT[i]-MIN[i])/(MAX[i]-MIN[i])));
+}
+
+Ep =Ke*(-2.0*DATM[0]-1.0*DATM[1]+0*DATM[2]+1.0*DATM[3]+2.0*DATM[4])/(DATM[0]+DATM[1]+DATM[2]+DATM[3]+DATM[4]);
+
+
+
+Ekub=Ep*Ep*Ep;
+
+for (int i=0;i<9;i++)
+{
+EI[i]=EI[i+1];
+Ei=Ei+EI[i];
+}
+EI[9]=Ep;
+Ei=(Ei+Ep)/10.0;
+Ed=Ep-Ei;
+
+if(Ep>0&&Ep>Emax)
+{
+Ew=Ep;
+}
+if(Ep<0&&Ep<Emin)
+{
+Ew=Ep;
+}
+
+U= Kp*Ep + Kkub*Ekub + Ki*Ei + Kd*Ed;
+
+M1=Mo+U;
+M2=Mo-U;
+
+if (0 < M1)
+{
+dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,M1);
+}
+else
+{
+dc_motor(LEFT_MOTOR_1,BACKWARD_DIRECTION,M1);
+}
+if (0 < M2)
+{
+dc_motor(RIGHT_MOTOR_1,FORWARD_DIRECTION,M2);
+}
+else
+{
+dc_motor(RIGHT_MOTOR_1,BACKWARD_DIRECTION,M2);
+}
+if (DATM[0]<10&&DATM[1]<10&&DATM[2]<10&&DATM[3]<10&&DATM[4]<10)
+{
+
+if (0 < Mo+(Kw*Ew))
+{
+dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,Mo+(Kw*Ew));
+}
+else
+{
+dc_motor(LEFT_MOTOR_1,BACKWARD_DIRECTION,Mo+(Kw*Ew));
+}
+if (0 < Mo-(Kw*Ew))
+{
+dc_motor(RIGHT_MOTOR_1,FORWARD_DIRECTION,Mo-(Kw*Ew));
+}
+else
+{
+dc_motor(RIGHT_MOTOR_1,BACKWARD_DIRECTION,Mo-(Kw*Ew));
+}
+
+}
+}
+
+
+
+return 0;
+}

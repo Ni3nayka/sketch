@@ -1,0 +1,34 @@
+[22:29, 14.03.2020] Проект МИФИ Сергей Геннадьевич Климанов: Я брал с этого сайта, только надо убрать import video
+[22:30, 14.03.2020] Проект МИФИ Сергей Геннадьевич Климанов: делаем так:
+cap = cv2.VideoCapture(0), cv2 следственно содержит video, import video не нужно делать
+https://robotclass.ru/tutorials/opencv-color-range-filter/
+
+sudo rm -rf LCD-show
+git clone https://github.com/goodtft/LCD-show.git
+chmod -R 755 LCD-show
+cd LCD-show/
+sudo ./LCD35-show
+
+./LCD-hdmi
+
+wget http://files.amperka.ru/store-media/products/tft-touch-color-display-480x320-raspberry-pi/media/LCD_show_v6.1.tar.gz
+tar -xvf LCD_show_v6.1.tar.gz
+cd LCD_show
+sudo ./LCD35_v6.1
+
+sudo ./LCD_hdmi
+
+sudo apt-get update
+sudo apt-get upgrade
+sudo rpi-update
+
+===================================================
+
+
+
+
+
+
+
+
+

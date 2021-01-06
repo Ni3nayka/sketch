@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+<Pages collapsible-pages="yes" drawer-with-page="yes">
+<Page page-color="255 255 255" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="1920">
+<PageBlocks>
+<Block genus-name="delay" id="236">
+<Location>
+<X>164</X>
+<Y>921</Y>
+</Location>
+<BeforeBlockId>917</BeforeBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="237" connector-kind="socket" connector-type="number" init-type="number" label="милисекунд" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="number" id="237">
+<Label>1000</Label>
+<Location>
+<X>310</X>
+<Y>924</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="236" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_GyroModeRawGyro" id="923">
+<Location>
+<X>458</X>
+<Y>846</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="921" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_GyroAxisZ" id="922">
+<Location>
+<X>458</X>
+<Y>822</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="921" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_displayText" id="911">
+<Location>
+<X>164</X>
+<Y>645</Y>
+</Location>
+<BeforeBlockId>900</BeforeBlockId>
+<AfterBlockId>917</AfterBlockId>
+<Sockets num-sockets="5">
+<BlockConnector con-block-id="912" connector-kind="socket" connector-type="number" init-type="number" label="X" position-type="single"/>
+<BlockConnector con-block-id="913" connector-kind="socket" connector-type="number" init-type="number" label="Y" position-type="single"/>
+<BlockConnector con-block-id="914" connector-kind="socket" connector-type="string" init-type="string" label="message" position-type="single"/>
+<BlockConnector con-block-id="915" connector-kind="socket" connector-type="number" init-type="number" label="шрифт" position-type="single"/>
+<BlockConnector con-block-id="916" connector-kind="socket" connector-type="number" init-type="number" label="цвет" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_displayText" id="917">
+<Location>
+<X>164</X>
+<Y>771</Y>
+</Location>
+<BeforeBlockId>911</BeforeBlockId>
+<AfterBlockId>236</AfterBlockId>
+<Sockets num-sockets="5">
+<BlockConnector con-block-id="918" connector-kind="socket" connector-type="number" init-type="number" label="X" position-type="single"/>
+<BlockConnector con-block-id="919" connector-kind="socket" connector-type="number" init-type="number" label="Y" position-type="single"/>
+<BlockConnector con-block-id="920" connector-kind="socket" connector-type="string" init-type="string" label="message" position-type="single"/>
+<BlockConnector con-block-id="924" connector-kind="socket" connector-type="number" init-type="number" label="шрифт" position-type="single"/>
+<BlockConnector con-block-id="925" connector-kind="socket" connector-type="number" init-type="number" label="цвет" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_dispColorWHITE" id="925">
+<Location>
+<X>272</X>
+<Y>894</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="917" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="924">
+<Location>
+<X>272</X>
+<Y>870</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="917" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="glue_sn" id="920">
+<Location>
+<X>272</X>
+<Y>822</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="917" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="921" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_Gyro" id="921">
+<Location>
+<X>328</X>
+<Y>822</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="920" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="922" connector-kind="socket" connector-type="string" init-type="string" label="ось" position-type="single"/>
+<BlockConnector con-block-id="923" connector-kind="socket" connector-type="string" init-type="string" label="режим" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="number" id="919">
+<Label>40</Label>
+<Location>
+<X>272</X>
+<Y>798</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="917" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="918">
+<Label>100</Label>
+<Location>
+<X>272</X>
+<Y>774</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="917" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_dispColorWHITE" id="916">
+<Location>
+<X>272</X>
+<Y>744</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="911" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="915">
+<Location>
+<X>272</X>
+<Y>720</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="911" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="simpleMessage" id="914">
+<Label>Z =</Label>
+<Location>
+<X>272</X>
+<Y>696</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="911" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="913">
+<Label>40</Label>
+<Location>
+<X>272</X>
+<Y>672</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="911" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="912">
+<Label>0</Label>
+<Location>
+<X>272</X>
+<Y>648</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="911" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_GyroAxisY" id="905">
+<Location>
+<X>458</X>
+<Y>546</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="904" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_displayText" id="894">
+<Location>
+<X>164</X>
+<Y>369</Y>
+</Location>
+<BeforeBlockId>224</BeforeBlockId>
+<AfterBlockId>900</AfterBlockId>
+<Sockets num-sockets="5">
+<BlockConnector con-block-id="895" connector-kind="socket" connector-type="number" init-type="number" label="X" position-type="single"/>
+<BlockConnector con-block-id="896" connector-kind="socket" connector-type="number" init-type="number" label="Y" position-type="single"/>
+<BlockConnector con-block-id="897" connector-kind="socket" connector-type="string" init-type="string" label="message" position-type="single"/>
+<BlockConnector con-block-id="898" connector-kind="socket" connector-type="number" init-type="number" label="шрифт" position-type="single"/>
+<BlockConnector con-block-id="899" connector-kind="socket" connector-type="number" init-type="number" label="цвет" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_displayText" id="900">
+<Location>
+<X>164</X>
+<Y>495</Y>
+</Location>
+<BeforeBlockId>894</BeforeBlockId>
+<AfterBlockId>911</AfterBlockId>
+<Sockets num-sockets="5">
+<BlockConnector con-block-id="901" connector-kind="socket" connector-type="number" init-type="number" label="X" position-type="single"/>
+<BlockConnector con-block-id="902" connector-kind="socket" connector-type="number" init-type="number" label="Y" position-type="single"/>
+<BlockConnector con-block-id="903" connector-kind="socket" connector-type="string" init-type="string" label="message" position-type="single"/>
+<BlockConnector con-block-id="907" connector-kind="socket" connector-type="number" init-type="number" label="шрифт" position-type="single"/>
+<BlockConnector con-block-id="908" connector-kind="socket" connector-type="number" init-type="number" label="цвет" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_dispColorWHITE" id="908">
+<Location>
+<X>272</X>
+<Y>618</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="900" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="907">
+<Location>
+<X>272</X>
+<Y>594</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="900" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="glue_sn" id="903">
+<Location>
+<X>272</X>
+<Y>546</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="900" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="904" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_Gyro" id="904">
+<Location>
+<X>328</X>
+<Y>546</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="903" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="905" connector-kind="socket" connector-type="string" init-type="string" label="ось" position-type="single"/>
+<BlockConnector con-block-id="906" connector-kind="socket" connector-type="string" init-type="string" label="режим" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_GyroModeFiltered" id="906">
+<Label>усреднённый</Label>
+<Location>
+<X>458</X>
+<Y>570</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="904" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="902">
+<Label>20</Label>
+<Location>
+<X>272</X>
+<Y>522</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="900" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="901">
+<Label>100</Label>
+<Location>
+<X>272</X>
+<Y>498</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="900" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_dispColorWHITE" id="899">
+<Location>
+<X>272</X>
+<Y>468</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="894" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="898">
+<Location>
+<X>272</X>
+<Y>444</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="894" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="simpleMessage" id="897">
+<Label>Y =</Label>
+<Location>
+<X>272</X>
+<Y>420</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="894" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="896">
+<Label>20</Label>
+<Location>
+<X>272</X>
+<Y>396</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="894" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="895">
+<Label>0</Label>
+<Location>
+<X>272</X>
+<Y>372</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="894" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="glue_sn" id="678">
+<Location>
+<X>272</X>
+<Y>270</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="224" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="891" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_Gyro" id="891">
+<Location>
+<X>328</X>
+<Y>270</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="678" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="892" connector-kind="socket" connector-type="string" init-type="string" label="ось" position-type="single"/>
+<BlockConnector con-block-id="893" connector-kind="socket" connector-type="string" init-type="string" label="режим" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_GyroModeFiltered" id="893">
+<Label>усреднённый</Label>
+<Location>
+<X>458</X>
+<Y>294</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="891" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_GyroAxisX" id="892">
+<Location>
+<X>458</X>
+<Y>270</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="891" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_displayClear" id="216">
+<Location>
+<X>164</X>
+<Y>69</Y>
+</Location>
+<BeforeBlockId>213</BeforeBlockId>
+<AfterBlockId>217</AfterBlockId>
+</Block>
+<Block genus-name="robotrack_displayText" id="217">
+<Location>
+<X>164</X>
+<Y>93</Y>
+</Location>
+<BeforeBlockId>216</BeforeBlockId>
+<AfterBlockId>224</AfterBlockId>
+<Sockets num-sockets="5">
+<BlockConnector con-block-id="218" connector-kind="socket" connector-type="number" init-type="number" label="X" position-type="single"/>
+<BlockConnector con-block-id="219" connector-kind="socket" connector-type="number" init-type="number" label="Y" position-type="single"/>
+<BlockConnector con-block-id="220" connector-kind="socket" connector-type="string" init-type="string" label="message" position-type="single"/>
+<BlockConnector con-block-id="221" connector-kind="socket" connector-type="number" init-type="number" label="шрифт" position-type="single"/>
+<BlockConnector con-block-id="222" connector-kind="socket" connector-type="number" init-type="number" label="цвет" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_displayText" id="224">
+<Location>
+<X>164</X>
+<Y>219</Y>
+</Location>
+<BeforeBlockId>217</BeforeBlockId>
+<AfterBlockId>894</AfterBlockId>
+<Sockets num-sockets="5">
+<BlockConnector con-block-id="225" connector-kind="socket" connector-type="number" init-type="number" label="X" position-type="single"/>
+<BlockConnector con-block-id="226" connector-kind="socket" connector-type="number" init-type="number" label="Y" position-type="single"/>
+<BlockConnector con-block-id="678" connector-kind="socket" connector-type="string" init-type="string" label="message" position-type="single"/>
+<BlockConnector con-block-id="228" connector-kind="socket" connector-type="number" init-type="number" label="шрифт" position-type="single"/>
+<BlockConnector con-block-id="229" connector-kind="socket" connector-type="number" init-type="number" label="цвет" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_dispColorWHITE" id="229">
+<Location>
+<X>272</X>
+<Y>342</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="224" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="228">
+<Location>
+<X>272</X>
+<Y>318</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="224" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="226">
+<Label>0</Label>
+<Location>
+<X>272</X>
+<Y>246</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="224" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="225">
+<Label>100</Label>
+<Location>
+<X>272</X>
+<Y>222</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="224" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_dispColorWHITE" id="222">
+<Location>
+<X>272</X>
+<Y>192</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="217" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="221">
+<Location>
+<X>272</X>
+<Y>168</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="217" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="simpleMessage" id="220">
+<Label>X =</Label>
+<Location>
+<X>272</X>
+<Y>144</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="217" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="219">
+<Label>0</Label>
+<Location>
+<X>272</X>
+<Y>120</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="217" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="number" id="218">
+<Label>0</Label>
+<Location>
+<X>272</X>
+<Y>96</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="217" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+</Plug>
+</Block>
+<Block genus-name="robotrack_displaySetup" id="214">
+<Location>
+<X>165</X>
+<Y>28</Y>
+</Location>
+<BeforeBlockId>213</BeforeBlockId>
+<Sockets num-sockets="1">
+<BlockConnector con-block-id="215" connector-kind="socket" connector-type="number" init-type="number" label="UART" position-type="single"/>
+</Sockets>
+</Block>
+<Block genus-name="robotrack_UART1" id="215">
+<Location>
+<X>345</X>
+<Y>31</Y>
+</Location>
+<Plug>
+<BlockConnector con-block-id="214" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+</Plug>
+</Block>
+<Block genus-name="program" id="213">
+<Location>
+<X>20</X>
+<Y>20</Y>
+</Location>
+<Sockets num-sockets="2">
+<BlockConnector con-block-id="214" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Установка" position-type="single"/>
+<BlockConnector con-block-id="216" connector-kind="socket" connector-type="cmd" init-type="cmd" label="цикл" position-type="single"/>
+</Sockets>
+</Block>
+</PageBlocks>
+</Page>
+</Pages>
+</cb:CODEBLOCKS>

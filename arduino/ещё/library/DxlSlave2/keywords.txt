@@ -1,0 +1,23 @@
+#######################################
+# Syntax Coloring Map For DxlSlave
+####################################### 
+# Object
+#######################################
+
+DxlSlave	KEYWORD1
+
+#######################################
+# Methods and Functions 
+#######################################	
+
+begin		KEYWORD2
+set_id		KEYWORD2
+set_baud	KEYWORD2
+set			KEYWORD2
+set16		KEYWORD2
+get			KEYWORD2
+get16		KEYWORD2
+set_mode	KEYWORD2
+set_mode16	KEYWORD2
+poll		KEYWORD2
+scan		KEYWORD2

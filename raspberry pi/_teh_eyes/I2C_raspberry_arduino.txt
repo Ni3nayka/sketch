@@ -1,0 +1,128 @@
+https://kip-world.ru/kak-organizovat-obmen-dannyh-mezhdu-arduino-i-raspberry-pi.html
+
+Мой эксперимент «На столе»
+
+Хочу сразу написать, что в Raspberry Pi программа сразу не заработает, нужно сделать ещё несколько действий, в том числе и проверить связь между устройствами.
+
+Сначала в raspiconfig мы выставляем разрешение на работу I2C порта. Находим в главном меню настройки preference — Interfeis — I2C — Enable.
+
+Перезагружаемся:
+sudo reboot
+
+После перезагрузки проверяем, есть наше устройство?:
+ls /dev | grep i2c
+
+Если в ответ на эту команду мы получили:
+i2c-0
+i2c-1
+
+То всё ОК! Обращаю внимание у Raspberry Pi 3 только один порт i2c - 1.
+
+Ставим следующие пакеты:
+sudo apt-get update
+sudo apt-get install i2c-tools (необязательно, но удобно просматривать подключенные устройства и всячески работать с шиной I2C в консоли)
+sudo apt-get install python-smbus
+
+Теперь проверяем соединение:
+sudo i2cdetect -y 1
+
+В ответ должна выскочить такая картинка в консоли:
+     0  1  2  3  4  5 ~
+00: -- -- -- 03 04 -- ~
+01: -- -- -- -- -- -- ~
+02: -- -- -- -- -- -- ~
+03: -- -- -- -- -- -- ~
+~~~~~~~~~~~~~~~~~~~~~~~
+Если показывает адрес, то значит малина видит ваше устройство.
+Если ваш скрипт выдаёт такую ошибку:
+OSError: [Errno 121] Remote I/O error
+Она говорит нам о том, что нужно проверить связь, так как устройство не доступно.
+
+================================================================================================================================================
+
+скрипт для разбери (питон):
+
+import smbus
+import time
+import os
+ 
+bus = smbus.SMBus(1)
+SLAVE_ADDRESS = 0x04
+ 
+def request_reading():
+    reading = int(bus.read_byte(SLAVE_ADDRESS))
+    print(reading)
+ 
+while True:
+    command = input("Enter command: l - toggle LED, r - read A0 ")
+    if command == 'l' :
+        bus.write_byte(SLAVE_ADDRESS, ord('l'))
+    elif command == 'r' :
+        request_reading()
+
+скетч для ардуино:
+
+#include <dht11.h>
+#include <Wire.h>
+dht11 DHT;               // Объявление переменной класса dht11
+#define DHT11_PIN 2     // Датчик DHT11 подключен к цифровому пину номер 4
+ 
+int SLAVE_ADDRESS = 0x04;
+int ledPin = 13;
+boolean ledOn = false;
+ 
+void setup(){
+  Serial.begin(9600);   // Скорость работы порта
+  Serial.println("DHT TEST PROGRAM "); // Выводим текст
+  Serial.print("LIBRARY VERSION: ");   // Выводим текст
+  Serial.println(DHT11LIB_VERSION);
+  Serial.println();                    // Пустая строка 
+  pinMode(ledPin, OUTPUT);
+  Wire.begin(SLAVE_ADDRESS);
+  Wire.onReceive(processMessage);
+  Wire.onRequest(sendAnalogReading);
+}
+ 
+void loop(){
+  int chk;
+  
+  // Мониторинг ошибок
+  chk = DHT.read(DHT11_PIN);    // Чтение данных
+  switch (chk){
+  case DHTLIB_OK:  
+    break;
+  case DHTLIB_ERROR_CHECKSUM:
+    Serial.println("Checksum error, \t");
+    break;
+  case DHTLIB_ERROR_TIMEOUT:
+    Serial.println("Time out error, \t");
+    break;
+  default:
+    Serial.println("Unknown error, \t");
+    break;
+  }
+  // Выводим показания влажности и температуры
+  Serial.print("Humidity = ");
+  Serial.print(DHT.humidity, 1);
+  Serial.print(", Temp = ");
+  Serial.println(DHT.temperature,1);
+  delay(300);
+}
+ 
+void processMessage(int n) {
+  char ch = Wire.read();
+  if (ch == 'l')
+  {
+    toggleLED();
+  }
+}
+ 
+void toggleLED() {
+  ledOn = ! ledOn;
+  digitalWrite(ledPin, ledOn);
+}
+ 
+void sendAnalogReading() {
+  byte reading = DHT.temperature;
+  Wire.write(reading);
+}

@@ -1,0 +1,14 @@
+прошить stm (bootloader):
+https://istarik.ru/blog/stm32/111.html
+
+прошивка (взять только generic_boot20_pc13.bin):
+https://github.com/rogerclarkmelbourne/STM32duino-bootloader/tree/master/binaries
+
+методичка по работе в ардуино иде с stm:
+https://www.youtube.com/watch?v=5mThFmpC1U4
+
+скачать, скопировать в документы\arduino\hardware и установить из нее драйвер USB (штатный stm):
+https://github.com/rogerclarkmelbourne/Arduino_STM32
+
+еще одна методичка (на всякий случай, не использовал):
+https://www.youtube.com/watch?v=878k4KqF7Xs

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root version="20190819">
+    <world>
+        <walls>
+            <wall stroke-style="none" fill="#ff000000" stroke-width="10" stroke="#ff000000" id="{007e8069-0b18-40e7-bf0f-593379420602}" begin="-35:-40" end="175:-44"/>
+            <wall stroke-style="none" fill="#ff000000" stroke-width="10" stroke="#ff000000" id="{1b2b653f-4fc3-49af-891c-2ae2b9ac7d39}" begin="176:-45" end="248:-108"/>
+            <wall stroke-style="none" fill="#ff000000" stroke-width="10" stroke="#ff000000" id="{67204d4f-82cf-4bc4-9f90-5914ad35dfe8}" begin="251:-110" end="200:-169"/>
+            <wall stroke-style="none" fill="#ff000000" stroke-width="10" stroke="#ff000000" id="{a6dbc902-0f64-4c90-9a3c-93b3bfd57dbe}" begin="198:-170" end="89:-175"/>
+            <wall stroke-style="none" fill="#ff000000" stroke-width="10" stroke="#ff000000" id="{38c03573-ad39-4b51-a8ff-49c429790f8f}" begin="86:-175" end="-82:-166"/>
+            <wall stroke-style="none" fill="#ff000000" stroke-width="10" stroke="#ff000000" id="{629201e9-f60d-4d0f-a5ad-34f71279cee3}" begin="-82:-163" end="-124:-101"/>
+            <wall stroke-style="none" fill="#ff000000" stroke-width="10" stroke="#ff000000" id="{9bcefa4f-69db-4adb-8994-53ad037d3392}" begin="-128:-101" end="-32.5:-40"/>
+            <wall stroke-style="none" fill="#ff000000" stroke-width="10" stroke="#ff000000" id="{d31f6b64-bff7-4031-9f32-f6a03c1d87e3}" begin="-158:114" end="303:141"/>
+            <wall stroke-style="none" fill="#ff000000" stroke-width="10" stroke="#ff000000" id="{a26fee06-4262-42bd-955a-efe4029a1837}" begin="307:141" end="416:13"/>
+            <wall stroke-style="none" fill="#ff000000" stroke-width="10" stroke="#ff000000" id="{8f3fb476-cc53-4a0f-a4bc-7e9b95cd59cf}" begin="411.75:13.5" end="522:-105.75"/>
+            <wall stroke-style="none" fill="#ff000000" stroke-width="10" stroke="#ff000000" id="{66551028-8129-4f05-8cd2-bc6d8d0ea792}" begin="524.25:-105.75" end="474.75:-326.25"/>
+            <wall stroke-style="none" fill="#ff000000" stroke-width="10" stroke="#ff000000" id="{b21f0f9a-a6e4-4a5b-924c-d16415fbe580}" begin="474.75:-326.25" end="155.25:-398.25"/>
+            <wall stroke-style="none" fill="#ff000000" stroke-width="10" stroke="#ff000000" id="{33d17476-43ab-4492-a8d9-b9186c23590f}" begin="150.75:-402.75" end="-288:-324"/>
+            <wall stroke-style="none" fill="#ff000000" stroke-width="10" stroke="#ff000000" id="{496d4eb5-a1b9-4df1-ac63-e7670b9fce8e}" begin="-297:-317.25" end="-375.75:2.25"/>
+            <wall stroke-style="none" fill="#ff000000" stroke-width="10" stroke="#ff000000" id="{e9095e28-e5a2-4919-b960-93431ae64704}" begin="-384.75:-2.25" end="-150.75:114.75"/>
+        </walls>
+        <skittles/>
+        <balls/>
+        <colorFields/>
+        <images/>
+        <regions/>
+    </world>
+    <robots>
+        <robot direction="-1303.96" position="-142.775:-235.702" id="trikKitRobot">
+            <sensors>
+                <sensor direction="312.587" port="A1###input###А1###sensorA1" position="67.6667:7.33333" type="trik::robotModel::parts::TrikInfraredSensor"/>
+                <sensor direction="0" port="Video2Port###input######" position="0:0" type=""/>
+                <sensor direction="0" port="M1###output###М1###" position="75:25" type="kitBase::robotModel::robotParts::Motor"/>
+                <sensor direction="0" port="M2###output###М2###" position="75:25" type="kitBase::robotModel::robotParts::Motor"/>
+                <sensor direction="0" port="M3###output###М3###" position="75:25" type="kitBase::robotModel::robotParts::Motor"/>
+                <sensor direction="0" port="M4###output###М4###" position="75:25" type="kitBase::robotModel::robotParts::Motor"/>
+                <sensor direction="0" port="D2###input######sensorD2" position="0:0" type=""/>
+                <sensor direction="44.1896" port="A2###input###А2###sensorA2" position="68.3167:43.3308" type="trik::robotModel::parts::TrikInfraredSensor"/>
+            </sensors>
+            <startPosition direction="0" x="25" y="25" id="{470d9710-8140-4997-ad15-b5d5342c4702}"/>
+            <wheels left="M1###output###М1###" right="M2###output###М2###"/>
+        </robot>
+    </robots>
+    <settings realisticPhysics="true" realisticMotors="true" realisticSensors="true"/>
+</root>

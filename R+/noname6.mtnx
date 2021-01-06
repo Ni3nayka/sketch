@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Root name="R+Motion" version="2.0.0">
+  <DesignRoot name="Humanoid A-type" controller="CM-530">
+    <skeleton>
+      <joint motor="AX-12A" id="1" enable="True" id2="1" mirror="2" />
+      <joint motor="AX-12A" id="2" enable="True" id2="2" mirror="1" />
+      <joint motor="AX-12A" id="3" enable="True" id2="3" mirror="4" />
+      <joint motor="AX-12A" id="4" enable="True" id2="4" mirror="3" />
+      <joint motor="AX-12A" id="5" enable="True" id2="5" mirror="6" />
+      <joint motor="AX-12A" id="6" enable="True" id2="6" mirror="5" />
+      <joint motor="AX-12A" id="7" enable="True" id2="7" mirror="8" />
+      <joint motor="AX-12A" id="8" enable="True" id2="8" mirror="7" />
+      <joint motor="AX-12A" id="9" enable="True" id2="9" mirror="10" />
+      <joint motor="AX-12A" id="10" enable="True" id2="10" mirror="9" />
+      <joint motor="AX-12A" id="11" enable="True" id2="11" mirror="12" />
+      <joint motor="AX-12A" id="12" enable="True" id2="12" mirror="11" />
+      <joint motor="AX-12A" id="13" enable="True" id2="13" mirror="14" />
+      <joint motor="AX-12A" id="14" enable="True" id2="14" mirror="13" />
+      <joint motor="AX-12A" id="15" enable="True" id2="15" mirror="16" />
+      <joint motor="AX-12A" id="16" enable="True" id2="16" mirror="15" />
+      <joint motor="AX-12A" id="17" enable="True" id2="17" mirror="18" />
+      <joint motor="AX-12A" id="18" enable="True" id2="18" mirror="17" />
+    </skeleton>
+  </DesignRoot>
+  <FlowRoot>
+    <Flow name="2222" return="-1">
+      <units>
+        <unit main="stoika smirno" mainSpeed="1" loop="1" exit="" exitSpeed="1" callSite="False" />
+        <unit main="stoika na golove" mainSpeed="1" loop="1" exit="" exitSpeed="1" callSite="False" />
+      </units>
+    </Flow>
+    <Flow name="123" return="-1">
+      <units>
+        <unit main="prizok" mainSpeed="1" loop="1" exit="" exitSpeed="1" callSite="False" />
+      </units>
+    </Flow>
+  </FlowRoot>
+  <PageRoot>
+    <Page name="stoika smirno">
+      <param compileSize="1" acceleration="32" softness="5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5" />
+      <steps>
+        <step frame="256" pose="-95.43 95.43 -78 78 -10 10 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+      </steps>
+    </Page>
+    <Page name="ruki">
+      <param compileSize="2" acceleration="32" softness="5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5" />
+      <steps>
+        <step frame="3" pose="-95.43 95.43 -78 78 -10 10 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+        <step frame="51" pose="-95.43 95.43 2 -2 -88 88 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+        <step frame="77" pose="91.57 -91.57 2 -2 -88 88 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+        <step frame="128" pose="91.57 -91.57 -84 84 -13 13 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+        <step frame="180" pose="91.57 -91.57 -48 96 -13 38 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+        <step frame="256" pose="91.57 -91.57 -93 48 -39 13 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+        <step frame="333" pose="91.57 -91.57 -48 96 -13 38 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+        <step frame="410" pose="91.57 -91.57 -93 48 -39 13 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+        <step frame="487" pose="91.57 -91.57 -93 93 -39 39 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+        <step frame="563" pose="91.57 -91.57 -37 37 -39 39 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+        <step frame="640" pose="91.57 -91.57 -22 22 -121 121 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+        <step frame="769" pose="89.63 95.43 -58.63 78 -31.83 10 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+        <step frame="896" pose="-95.43 95.43 -78 78 -10 10 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+      </steps>
+    </Page>
+    <Page name="prisel">
+      <param compileSize="1" acceleration="32" softness="5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5" />
+      <steps>
+        <step frame="205" pose="-93.87 93.87 -78 78 -10 10 -44 44 -2 2 -69.34 69.34 -138.32 138.32 67.37 -67.37 0 0" />
+      </steps>
+    </Page>
+    <Page name="prisedanie">
+      <param compileSize="1" acceleration="32" softness="5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5" />
+      <steps>
+        <step frame="0" pose="-95.43 95.43 -78 78 -10 10 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+        <step frame="129" pose="-2.26 2.26 -78 78 -10 10 -44 44 -2 2 -69.34 69.34 -138.32 138.32 67.37 -67.37 0 0" />
+        <step frame="257" pose="-95.43 95.43 -78 78 -10 10 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+      </steps>
+    </Page>
+    <Page name="prizok">
+      <param compileSize="1" acceleration="32" softness="5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5" />
+      <steps>
+        <step frame="128" pose="-95.43 95.43 -78 78 -10 10 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+        <step frame="256" pose="-93.26 93.26 -78 78 -10 10 -44 44 -2 2 -69.34 69.34 -138.32 138.32 67.37 -67.37 0 0" />
+        <step frame="282" pose="-95.43 95.43 -78 78 -10 10 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+      </steps>
+    </Page>
+    <Page name="niznii brake">
+      <param compileSize="1" acceleration="32" softness="5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5" />
+      <steps>
+        <step frame="3" pose="-20.44 20.44 -78 78 -10 10 -44 44 -2 2 -20.07 20.07 -29.91 29.91 70.82 -70.82 0 0" />
+        <step frame="26" pose="-20.44 20.44 -68 78 -25 25 -44 44 -2 2 -3.07 20.07 -29.91 29.91 79.82 -70.82 0 0" />
+        <step frame="51" pose="-20.44 20.44 -78 78 -10 10 -44 44 -17 17 -6.07 20.07 -29.91 29.91 79.82 -70.82 -9 9" />
+        <step frame="78" pose="-20.44 20.44 -68 68 -25 25 -44 44 -17 17 -20.07 20.07 -29.91 29.91 70.82 -70.82 -8 8" />
+        <step frame="103" pose="-20.44 20.44 -78 78 -10 10 -44 44 -17 17 -20.07 8.07 -29.91 29.91 70.82 -74.82 -10 7" />
+        <step frame="128" pose="-20.44 20.44 -68 68 -22 22 -44 44 -2 2 -20.07 8.07 -29.91 29.91 70.82 -74.82 -3 3" />
+        <step frame="154" pose="-20.44 20.44 -78 78 -10 10 -44 44 -2 2 -20.07 20.07 -29.91 29.91 70.82 -70.82 -3 3" />
+      </steps>
+    </Page>
+    <Page name="pered otzimaniem">
+      <param compileSize="1" acceleration="32" softness="5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5" />
+      <steps>
+        <step frame="129" pose="-15.93 15.93 -78 78 -10 10 -44 44 -2 2 -93.34 93.34 -138.32 138.32 67.37 -67.37 0 0" />
+        <step frame="256" pose="-14.26 14.26 -78 78 -10 10 -44 44 -2 2 -125.34 125.34 -138.32 138.32 67.37 -67.37 0 0" />
+        <step frame="384" pose="-8.44 8.44 -78 78 -10 10 -44 44 -2 2 -22.07 22.07 -29.91 29.91 68.82 -68.82 0 0" />
+      </steps>
+    </Page>
+    <Page name="posle otzimaniya">
+      <param compileSize="1" acceleration="32" softness="5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5" />
+      <steps>
+        <step frame="131" pose="-0.44 0.44 -55 55 -46 46 -44 44 -2 2 -123.08 123.08 -58.91 58.91 24.82 -24.82 0 0" />
+        <step frame="257" pose="-31.44 31.44 -55 55 -46 46 -44 44 -2 2 -117.08 117.08 -69.91 69.91 8.82 -8.82 0 0" />
+        <step frame="369" pose="-55.44 55.44 -55 55 -46 46 -44 44 -2 2 -94.08 94.08 -99.91 99.91 26.82 -26.82 0 0" />
+        <step frame="513" pose="-95.43 95.43 -78 78 -10 10 -44 44 -2 2 -15 15 -38 38 22.15 -22.15 0 0" />
+        <step frame="667" pose="-95.43 95.43 -78 78 -10 10 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+      </steps>
+    </Page>
+    <Page name="otzimanie">
+      <param compileSize="1" acceleration="32" softness="5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5" />
+      <steps>
+        <step frame="128" pose="-8.44 8.44 -25.23 25.23 -106.16 106.16 -44 44 -2 2 -22.07 22.07 -29.91 29.91 82.82 -82.82 0 0" />
+        <step frame="257" pose="-8.44 8.44 -78 78 -10 10 -44 44 -2 2 -22.07 22.07 -29.91 29.91 68.82 -68.82 0 0" />
+      </steps>
+    </Page>
+    <Page name="go">
+      <param compileSize="1" acceleration="32" softness="5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5" />
+      <steps>
+        <step frame="129" pose="-95.43 95.43 -78 78 -10 10 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+      </steps>
+    </Page>
+    <Page name="stoika na golove">
+      <param compileSize="2" acceleration="32" softness="5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5" />
+      <steps>
+        <step frame="65" pose="-93.96 93.96 -78 78 -10 10 -44 44 -2 2 -77.33 77.33 -120.5 120.5 59.68 -59.68 0 0" />
+        <step frame="128" pose="-93.69 93.69 -78 78 -10 10 -44 44 -2 2 -69.34 69.34 -138.32 138.32 67.37 -67.37 0 0" />
+        <step frame="320" pose="-12.69 12.69 -49 49 -11 11 -44 44 -2 2 -137.34 137.34 -138.32 138.32 67.37 -67.37 0 0" />
+        <step frame="447" pose="-16.69 16.69 -56 56 -11 11 -44 44 -2 2 -137.34 137.34 -96.32 96.32 28.37 -28.37 0 0" />
+        <step frame="563" pose="-0.69 0.69 -44 44 -39 39 -44 44 -2 2 -150 150 -27.32 27.32 28.37 -28.37 0 0" />
+        <step frame="640" pose="-0.69 0.69 -58 58 -39 39 -44 44 -2 2 -150 150 -27.32 27.32 28.37 -28.37 0 0" />
+        <step frame="768" pose="0 0 -58 58 -39 39 -44 44 -2 2 -150 150 -120.32 120.32 28.37 -28.37 0 0" />
+        <step frame="962" pose="0 0 -58 58 -39 39 -44 44 -2 2 -63 63 -120.32 120.32 28.37 -28.37 0 0" />
+        <step frame="1153" pose="0 0 -58 58 -39 39 -44 44 -2 2 10 -10 -43.32 43.32 28.37 -28.37 0 0" />
+      </steps>
+    </Page>
+    <Page name="iz stoiki na golov">
+      <param compileSize="1" acceleration="32" softness="5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5" />
+      <steps>
+        <step frame="129" pose="-12.43 12.43 -78 78 -10 10 -44 44 -2 2 -146 146 -22 22 17.15 -17.15 0 0" />
+        <step frame="257" pose="51.57 -51.57 7 -7 -10 10 -44 44 -2 2 -146 146 -22 22 17.15 -17.15 0 0" />
+        <step frame="385" pose="-0.44 0.44 -55 55 -46 46 -44 44 -2 2 -123.08 123.08 -58.91 58.91 24.82 -24.82 0 0" />
+        <step frame="512" pose="-31.44 31.44 -55 55 -46 46 -44 44 -2 2 -117.08 117.08 -69.91 69.91 8.82 -8.82 0 0" />
+        <step frame="640" pose="-95.43 95.43 -78 78 -10 10 -44 44 -2 2 -15 15 -38 38 22.15 -22.15 0 0" />
+        <step frame="768" pose="-95.43 95.43 -78 78 -10 10 -44 44 -2 2 -4 4 -22 22 17.15 -17.15 0 0" />
+      </steps>
+    </Page>
+  </PageRoot>
+  <GroupRoot>
+    <Group name="None">
+      <param weights="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" />
+    </Group>
+    <Group name="All">
+      <param weights="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1" />
+    </Group>
+    <Group name="group1">
+      <param weights="0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0" />
+    </Group>
+  </GroupRoot>
+  <BucketRoot>
+    <Bucket name="1111">
+      <callFlows>
+        <callFlow callIndex="1" subIndex="0" exitIndex="0" flow="2222" />
+      </callFlows>
+    </Bucket>
+  </BucketRoot>
+</Root>

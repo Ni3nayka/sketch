@@ -1,0 +1,169 @@
+#include "functions_codes.h"
+
+int DAT[2], MIN[2], MAX[2], SR[2];
+float DATM[2], EI[10];
+float M1, M2, U;
+float Ke = 3;
+float Kp = 1;
+float Ki = 0.1;
+float Kd = 2;
+float Kkub = 0.02;
+float Mo = 4.5;
+float Ep = 0, Ekub = 0, Ei = 0, Ed = 0;
+
+int main ()
+{
+    mcu_initialization();
+    while (1)
+    {
+        
+        digitalWrite(1, LOW);
+        digitalWrite(2, LOW);
+        inn();
+        cross();
+        
+    }
+    return 0;
+}
+
+int toleft()
+{
+    while(DATM[1]<150) {inn();left();}
+    stop(); 
+    delay(0,0,1,0);
+} 
+
+int toright()
+{
+    while(DATM[1]<200) {inn();right();digitalWrite(1, HIGH);} 
+    stop(); 
+    delay(0,0,1,0);
+    
+    digitalWrite(1, LOW);
+}    
+
+int right()
+{
+    
+    dc_motor(LEFT_MOTOR_1,BACKWARD_DIRECTION,Mo*1.2);
+    dc_motor(RIGHT_MOTOR_1,FORWARD_DIRECTION,Mo*1.2);
+}
+
+int left()
+{
+    
+    dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,Mo*1.2);
+    dc_motor(RIGHT_MOTOR_1,BACKWARD_DIRECTION,Mo*1.2);
+}
+
+int cross()
+{
+    if(((DATM[0]>125) && (DATM[1]<125) && (DATM[2]>125))) forward();
+    if(((DATM[0]<125) && (DATM[1]>125) && (DATM[2]>125))) left();
+    if(((DATM[0]>125) && (DATM[1]>125) && (DATM[2]<125))) right();
+    if(((DATM[0]>200) && (DATM[1]>200) && (DATM[2]>200)))
+    {   
+        digitalWrite(2, HIGH);
+        forward();
+        delay(0,0,0,100);
+        stop();
+        delay(0,0,1,0);
+        toright();
+        stop();
+        delay(0,0,1,0);
+        digitalWrite(2, LOW);
+    }    
+    else
+    {
+        rele();
+    }
+    if((DATM[0]<70) && (DATM[1]<70) && (DATM[2]<70))
+    {   
+        digitalWrite(1, HIGH);
+        stop();
+        delay(0,0,1,0);
+        toright();
+        stop();
+        delay(0,0,1,0);
+        digitalWrite(1, LOW);
+    }    
+    else
+    {
+        rele();
+    }
+}
+int forward()
+{
+    
+    dc_motor(LEFT_MOTOR_1,FORWARD_DIRECTION,Mo);
+    dc_motor(RIGHT_MOTOR_1,FORWARD_DIRECTION,Mo);   
+}
+int rele()
+{
+    if(((DATM[0]>125) && (DATM[1]<125) && (DATM[2]>125))) forward();
+    if(((DATM[0]<125) && (DATM[1]>125) && (DATM[2]>125))) left();
+    if(((DATM[0]>125) && (DATM[1]>125) && (DATM[2]<125))) right();  
+}
+
+int stop()
+{
+    dc_motor(LEFT_MOTOR_1,STOP_DIRECTION,0);
+    dc_motor(RIGHT_MOTOR_1,STOP_DIRECTION,0);   
+}
+
+int pid()
+{
+    Ei = 0;
+    Ep = Ke * (DATM[0] - DATM[1] ) / (DATM[0] + DATM[1]);
+    
+    Ekub = Ep * Ep * Ep;
+    
+    for (int i = 0; i < 9; i++)
+    {
+        EI[i] = EI[i + 1];
+        Ei = Ei + EI[i];
+    }
+    EI[9] = Ep;
+    Ei = (Ei + Ep) / 10.0;
+    Ed = Ep - Ei;
+    
+    U = Kp * Ep + Kkub * Ekub + Ki * Ei + Kd * Ed;
+    
+    M1 = Mo + U;
+    M2 = Mo - U;
+    
+    if (0 < M1)
+    {
+        dc_motor(LEFT_MOTOR_1, FORWARD_DIRECTION, M1);
+    }
+    else
+    {
+        dc_motor(LEFT_MOTOR_1, BACKWARD_DIRECTION, M1);
+    }
+    if (0 < M2)
+    {
+        dc_motor(RIGHT_MOTOR_1, FORWARD_DIRECTION, M2);
+    }
+    else
+    {
+        dc_motor(RIGHT_MOTOR_1, BACKWARD_DIRECTION, M2);
+    }
+}
+
+int inn()
+{
+    for (int i = 0; i < 2; i++)
+    {
+        DAT[i] = analogRead(i + 1);
+        if (MAX[i] < DAT[i])
+        {
+            MAX[i] = DAT[i];
+        }
+        if (MIN[i] > DAT[i] || MIN[i] == 0)
+        {
+            MIN[i] = DAT[i];
+        }
+        DATM[i] = 2.55 * (100.0 - (100.0 * (DAT[i] - MIN[i]) / (MAX[i] - MIN[i])));
+        SR[i]=(MIN[i]+MAX[i])/2;
+    }
+}
