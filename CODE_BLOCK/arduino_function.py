@@ -9,8 +9,13 @@ Time = int(time()*1000)
 ras = 50
 import os.path # для определения наличия файла
 import webbrowser
+============================================================
 
+from sys import *
+path.insert(0, "D:/library")
+from arduino_function import *
 
+============================================================
 from arduino_function import *
 
 arduino_function_version("1.2+") # test version
@@ -30,6 +35,7 @@ from math import gcd # для простых дробей
 PI = 3.141592653589793
 
 def arduino_function_version(S=0):
+    S = str(S)
     version = "1.3"
     if (S==0):
         return version
