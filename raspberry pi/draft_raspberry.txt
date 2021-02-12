@@ -1,0 +1,158 @@
+	Configuring a remote desktop on a Raspberry Pi
+" http://wiki.amperka.ru/rpi:installation:vnc
+"command to check: vncserver
+"Server setting:
+sudo apt-get install realvnc-vnc-server realvnc-vnc-viewer
+sudo raspi-config
+"press: Interfacing Options => VNC => Yes
+vncserver
+"enter: menu raspberry => preferences => Raspberry pi configurations => interfaces => camera(on) vnc(on)
+
+
+	LCD-HDMI monitor
+
+sudo rm -rf LCD-show
+git clone https://github.com/goodtft/LCD-show.git
+chmod -R 755 LCD-show
+cd LCD-show/
+sudo ./LCD35-show
+
+sudo ./LCD-hdmi
+
+
+	USB flash drive destroys from two disk
+
+https://oknotivi.ru/fleshka-razdelilas-na-dva-diska/
+https://remontka.pro/delete-partitions-usb/
+
+
+	install arduino
+sudo apt-get install arduino
+
+	make a static IP address:
+sudo nano /etc/dhcpcd.conf
+"write at the very end of the opened file:
+
+# for MEPHI wlan
+
+nodhcp
+
+interface eth0
+static ip_address=192.168.0.243/24
+static routers=192.168.0.81
+static domain_name_servers=192.168.0.81
+
+interface wlan0
+static ip_address=192.168.0.243/24
+static routers=192.168.0.81
+static domain_name_servers=192.168.0.81
+
+# for HOME wlan
+
+nodhcp
+
+interface eth0
+static ip_address=192.168.1.243/24
+static routers=192.168.1.1
+static domain_name_servers=192.168.1.1
+
+interface wlan0
+static ip_address=192.168.1.243/24
+static routers=192.168.1.1
+static domain_name_servers=192.168.1.1
+
+
+
+	increase SWAP:
+sudo nano /etc/dphys-swapfile
+"in the opened file replace: CONF_SWAPSIZE=100 => CONF_SWAPSIZE=1024
+
+
+
+	extend the system to the entire memory of the card:
+sudo raspi-config
+"enter: Advanced Options => Expand Filesystem => ok (=> reboot)
+
+
+
+	Instaled openCV (4.1.0):
+sudo raspi-config
+"Next, select: Advanced Options => Expand Filesystem. reboot.
+
+" https://www.youtube.com/watch?v=0klfCxAX5x0
+sudo apt-get install cmake cmake-curses-gui libgtk2.0-dev
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libx264-dev libxvidcore-dev
+sudo apt-get install libjpeg-dev libpng12-dev libtiff5-dev libjasper-dev
+sudo apt-get install gfortran libatlas-base-dev
+sudo nano /etc/dphys-swapfile
+"in the opened file replace: CONF_SWAPSIZE=100 => CONF_SWAPSIZE=1024
+sudo /etc/init.d/dphys-swapfile stop
+sudo /etc/init.d/dphys-swapfile start
+cd /home/pi
+mkdir opencv
+cd opencv
+_________________
+wget https://github.com/opencv/opencv/arch... -O opencv_source.zip
+wget https://github.com/opencv/opencv_cont... -O opencv_contrib.zip
+_______________
+unzip opencv_source.zip
+unzip opencv_contrib.zip
+rm opencv_source.zip
+rm opencv_contrib.zip
+cd opencv-4.1.0
+mkdir build
+cd build
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+-D CMAKE_INSTALL_PREFIX=/usr/local \
+-D INSTALL_C_EXAMPLES=OFF \
+-D INSTALL_PYTHON_EXAMPLES=ON \
+-D OPENCV_EXTRA_MODULES_PATH=/home/pi/opencv/opencv_contrib-4.1.0/modules \
+-D BUILD_EXAMPLES=ON \
+-D BUILD_DOCS=ON \
+-D ENABLE_NEON=ON ..
+"Compilation in 1 thread
+make -j1
+"Compilation in 4 thread (only if you have a good raspberry cooling)
+make -j4
+"install the library
+sudo make install
+"Configuring dynamic linking
+sudo ldconfig
+"Checking the health of the library
+python3
+import cv2
+cv2.__version__
+"the version will be displayed openCV
+
+
+=================================================================================================================
+
+python -m pip install -U pip
+
+pip install opencv-python
+pip3 install opencv-python
+
+pip install dlib
+pip install face_recognition
+
+https://itproger.com/news/174
+https://imageai.readthedocs.io/en/latest/index.html
+
+https://proglib.io/p/real-time-object-detection/
+
+https://habr.com/ru/company/netologyru/blog/434354/
+
+pip install pyserial pyqt5
+https://habr.com/ru/post/443326/
+
+pip install pyserial
+https://arduinoplus.ru/arduino-python/
+ls /dev/tty.*
+analyzing ports
+
+
+
+
+
+
+
