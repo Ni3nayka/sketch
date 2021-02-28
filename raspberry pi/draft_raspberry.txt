@@ -152,6 +152,10 @@ https://arduinoplus.ru/arduino-python/
 ls /dev/tty.*
 analyzing ports
 
+pip3 install numba
+from numba import njit
+@njit(fastmath=True)
+
 
 
 
