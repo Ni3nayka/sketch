@@ -36,7 +36,7 @@ PI = 3.141592653589793
 
 def arduino_function_version(S=0):
     S = str(S)
-    version = "1.3"
+    version = "1.4"
     if (S==0):
         return version
     if (S==version):
@@ -84,12 +84,22 @@ def map_a(x, in_min, in_max, out_min, out_max):
     return int((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
     
 def znak(a):
-    if   (a > 0):
-        return  1
-    elif (a < 0):
-        return -1
-    else:
-        return  0
+        if   (a > 0): return  1
+        elif (a < 0): return -1
+        else: return  0
+
+def num(a):
+    if   (a=='0'): return 0
+    elif (a=='1'): return 1
+    elif (a=='2'): return 2
+    elif (a=='3'): return 3
+    elif (a=='4'): return 4
+    elif (a=='5'): return 5
+    elif (a=='6'): return 6
+    elif (a=='7'): return 7
+    elif (a=='8'): return 8
+    elif (a=='9'): return 9
+    else: return -1
     
 def print_mas(mas):
     for i in range(len(mas)):
