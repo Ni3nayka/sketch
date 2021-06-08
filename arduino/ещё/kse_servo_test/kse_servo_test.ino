@@ -1,3 +1,5 @@
+
+
 // C++ codebool Flag = 1;
 bool Flag = 1;
 unsigned long Time = 0;
@@ -34,10 +36,10 @@ void Sm(int PIN, int U) //процедура работы Сервомоторо
     }
   }
   //digitalWrite(PIN, !Flag);
-  Serial.println(Flag);
+  //Serial.println(Flag);
 }
 
 void loop()
 {
-  //Sm(pin_servo, B);
+  //Sm(pin_servo, C);
 }
