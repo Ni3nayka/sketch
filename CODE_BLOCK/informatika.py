@@ -9,7 +9,7 @@ no = 90
 def etag(n):
     return int((n-1)/8)+1
 
-print(etag(91))
+print(etag(91)) 
 
 while (no>0):
     nk = 97 - no
