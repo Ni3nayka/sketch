@@ -6,17 +6,43 @@
 int main()
 {
     // declare variable
-    int num_1, answer_1=0, n, a, d, s;
+    int a[3],x,y;
     // read from console
-    scanf("%i", &num_1);
-    scanf("%i %i %i", &n, &a, &d);
-    // sum number
-    while (num_1) { answer_1+=num_1%10; num_1/=10; }
-    // calculate progression
-    s = a;
-    for(int i = 0; i<n-2; i++) { a+=d; s+=a; }
-    // write on console min answer
-    printf("%i\n\n%i\n%5i%5i%5i\n%5i%5i%5i\n", answer_1, s+a+d, n-1,n,n+1, a,a+d,a+2*d);
+    scanf("%i %i %i", &a[0], &a[1], &a[2]);
+    scanf("%i %i", &x, &y);
+    // number 1
+    // sort
+    for (int i = 0; i <3;i++) {
+        for (int j=0;j<3-i;j++) {
+            if (a[j]>a[j+1]) {
+                int temp=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temp;
+            }
+        }
+    }
+    if (a[0]==a[1]&&a[1]==a[2]) printf("equal");
+    else {
+        if (a[1]==a[2]) printf("%i two\n",a[2]);
+        else printf("%i\n",a[2]);
+    }
+    // number 2
+    //>x*x
+    double x1 = sqrt(abs(250*250-y*y));
+    //printf("%lf\n",x1);
+    x = abs(x);
+    if (x<250) {
+        if (y>0&&y<250) {
+            if (x>x1) printf("inside\n");
+            else printf("outside\n");
+        }
+        else if (y<0&&y>-250) {
+            if (x<x1) printf("inside\n");
+            else printf("outside\n");
+        }
+        else printf("outside\n");
+    }
+    else printf("outside\n");
     // end
     return 0;
 }
