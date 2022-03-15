@@ -1,0 +1,124 @@
+from copy import deepcopy
+
+def alphavit(a):
+    a = list(a)
+    a = a[0]
+    if (a=='A'): return 26
+    if (a=='B'): return 25
+    if (a=='C'): return 24
+    if (a=='D'): return 23
+    if (a=='E'): return 22
+    if (a=='F'): return 21
+    if (a=='G'): return 20
+    if (a=='H'): return 19
+    if (a=='I'): return 18
+    if (a=='J'): return 17
+    if (a=='K'): return 16
+    if (a=='L'): return 15
+    if (a=='M'): return 14
+    if (a=='N'): return 13
+    if (a=='O'): return 12
+    if (a=='P'): return 11
+    if (a=='Q'): return 10
+    if (a=='R'): return 9
+    if (a=='S'): return 8
+    if (a=='T'): return 7
+    if (a=='U'): return 6
+    if (a=='V'): return 5
+    if (a=='W'): return 4
+    if (a=='X'): return 3
+    if (a=='Y'): return 2
+    if (a=='Z'): return 1
+
+def test_line(l):
+    a = []
+    l = list(l)
+    b = []
+    for i in range(len(l)):
+        if (l[i]==' ' and b!=[]):
+            flag_i = 0
+            if (b[0]=='1' or b[0]=='2' or b[0]=='3' or b[0]=='4' or b[0]=='5' or b[0]=='6' or b[0]=='7' or b[0]=='8' or b[0]=='9' or b[0]=='0' or b[0]=='-'):
+                flag_i = 1
+            b = ''.join(b)
+            if (flag_i): b = int(b)
+            a.append(b)
+            b = []
+        elif (1): # l[i]!=' '
+            b.append(l[i])
+    if (b!=[]):
+        flag_i = 0
+        if (b[0]=='1' or b[0]=='2' or b[0]=='3' or b[0]=='4' or b[0]=='5' or b[0]=='6' or b[0]=='7' or b[0]=='8' or b[0]=='9' or b[0]=='0' or b[0]=='-'):
+            flag_i = 1
+        b = ''.join(b)
+        if (flag_i): b = int(b)
+        a.append(b)
+    if (len(a)>3):
+        b = []
+        while (len(a)>2):
+            b.append(a[0])
+            b.append(str(" "))
+            del a[0]
+        del b[len(b)-1]
+        b = list(b)
+        b = ''.join(b)
+        a.append(b)
+        a.append(a[0])
+        a.append(a[1])
+        del a[0]
+        del a[0]
+        
+    return a
+        
+
+#print("HELLO!")
+data = [0]
+data[0] = input()
+data[0] = test_line(data[0])
+N = int(input())
+for i in range(N):
+    a = input()
+    #print(a)
+    a = test_line(a)
+    data.append(a)
+    
+for i in range(1,len(data)):
+    a = 0
+    b = data[0][0]-data[i][2]
+    if (b>0):a = abs(b)*data[0][2]  # надо греть
+    elif (b==0): a = 0
+    else: a = abs(b)*data[0][1]
+    data[i].append(a*data[i][1])
+    
+#for i in range (len(data)):
+#    print(data[i])
+N = len(data)-1
+for iii in range(N):
+    a = 9999999999999999
+    i = -1
+    aaa = 0
+    NN = len(data)
+    for i in range (1,NN):
+        if (data[i][3]<a or data[i][3]==a and alphavit(data[i][0])>aaa): 
+            a = data[i][3]
+            n = i
+            aaa = alphavit(data[i][0])
+    print(data[n][0],data[n][3])
+    del data[n]
+#print(b)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if (flag):
+
