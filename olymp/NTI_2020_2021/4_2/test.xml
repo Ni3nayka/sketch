@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root version="20190819">
+    <world>
+        <walls>
+            <wall fill="#ff000000" stroke="#ff000000" id="{3e9ea622-82d3-4b8c-880d-63ce7fc45c88}" stroke-style="none" stroke-width="10" begin="-219:166" end="369:116"/>
+            <wall fill="#ff000000" stroke="#ff000000" id="{b5b8ee7e-d293-4183-97a9-ba5de47a0a31}" stroke-style="none" stroke-width="10" begin="-190:441" end="-190:441"/>
+        </walls>
+        <skittles/>
+        <balls/>
+        <colorFields/>
+        <images/>
+        <regions/>
+    </world>
+    <robots>
+        <robot direction="0" id="trikKitRobot" position="0:0">
+            <sensors>
+                <sensor direction="-39870" type="trik::robotModel::parts::TrikInfraredSensor" port="A1###input###А1###sensorA1" position="24.9968:24.1745"/>
+            </sensors>
+            <startPosition direction="0" id="{a4558306-8438-4a1f-b31a-9d10564c1ccb}" x="25" y="25"/>
+            <wheels right="M3###output###М3###" left="M4###output###М4###"/>
+        </robot>
+    </robots>
+    <settings realisticSensors="false" realisticMotors="false" realisticPhysics="false"/>
+</root>
