@@ -3,9 +3,13 @@
 	<stdio.h>
 	<stdlib.h>
 
-1633414693 source:c:\users\ni3na\documents\github\sketch\code_block\test\main.c
+1651781229 source:c:\users\ni3na\documents\github\sketch\code_block\test\main.c
 	<stdio.h>
 	<stdlib.h>
+	<limits.h>
+	<time.h>
+	<math.h>
+	<malloc.h>
 
 1633180127 source:d:\github\sketch\code_block\test\main.c
 	<stdio.h>
