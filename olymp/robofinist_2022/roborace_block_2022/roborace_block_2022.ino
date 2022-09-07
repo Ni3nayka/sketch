@@ -6,8 +6,8 @@ AF_DCMotor motor_R(2);
 #define DAT_L A1
 #define DAT_R A2
 
-#define basic_speed 50
-#define Ke 0.6
+#define basic_speed 45
+#define Ke 0.3
 
 unsigned long int time = 0;
 
@@ -19,11 +19,11 @@ void setup() {
 void loop () { 
   int e = analogRead(DAT_L) - analogRead(DAT_R) - 36;
   e *= Ke;
-  motor_L.setSpeed(constrain(basic_speed + e,-255,255));
-  motor_R.setSpeed(constrain(basic_speed - e,-255,255));
+  motor_L.setSpeed(constrain(basic_speed + e,0,255));
+  motor_R.setSpeed(constrain(basic_speed - e,0,255));
   Serial.println(analogRead(DAT_L));
 
-  if (time+4000<millis()) {
+  if (time+3000<millis()) {
     motor_L.run(BACKWARD);
     motor_L.setSpeed(basic_speed);
     motor_R.setSpeed(basic_speed);
