@@ -66,5 +66,5 @@ void stop_motor() {
 }
 
 void loop(){ 
-  
+  Serial.println(test_perekrestok);
 }
