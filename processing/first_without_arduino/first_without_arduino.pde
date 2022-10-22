@@ -9,6 +9,8 @@ int value = 0;
 void setup() {
   //Определяем размер окна
   size(480, 480);
+  //fill(value);
+  //rect(0, 0, 500, 500);
    
 }
  
@@ -31,9 +33,12 @@ void draw() {
 }
 
 void keyPressed() {
-  if (value == 0) {
+  /*if (value == 0) {
     value = 255;
   } else {
     value = 0;
-  }
+  }*/
+  value++;
+  print("!");
+  text(value, width / 2, height/ 2);
 }
