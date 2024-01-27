@@ -22,7 +22,7 @@ void main() {
   }
 
   {
-    dynamic name = "Tom";
+    dynamic name = "Tom"; // если хотим менять тип данных
     print(name);
     name = 45;
     print(name);
@@ -77,7 +77,7 @@ void main() {
     // интерполяция:
     String name = "Tom";
     int age = 35;
-    String info = "Name: $name  Age: $age";
+    String info = "Name: $name  Age: $age \n";
     print(info);
   }
 
@@ -155,4 +155,66 @@ void main() {
     c = !b; // c равно true, если b равно false, иначе c будет равно false
     print(c);
   }
+
+  {
+    // краткие математические операции как в плюсах, кроме: (a+=b, a++)
+    int c = 10, b = 4;
+    //переменной c присваивается результат целочисленного деления c на b
+    c ~/= b;
+    print(c); // 2
+  }
+
+  {
+    // логическое if такое же как в плюсах
+    // switch-case - можно не использовать break, и вообще в case можно пустое поставить
+    // тернарный оператор такой же как в плюсах (а = ...?...:...)
+    // https://metanit.com/dart/tutorial/2.8.php
+
+    // for while do...while - все как на плюсах
+
+    // функции как в плюсах, но есть понт: (если в функции одно дейсвие)
+    // void hello() => print("Hello!");
+
+    // функции можно вкладывать в другие функции:
+
+    // аргументы по умолчанию:
+    void printPerson1(String name, [int age = 22]) {}
+    // а если надо в age записать если что null:
+    void printPerson2(String name, [int? age]) {}
+
+    // а если надо вызвать по имени:
+    void printPerson3({String? name = "undefined", int? age}) {
+      // если что, у age будет null
+      print("Name: $name");
+      if (age != null) {
+        print("Age: $age \n");
+      }
+    }
+
+    printPerson3(age: 35);
+    printPerson3(age: 29, name: "Alice");
+    printPerson3(name: "Kate");
+
+    // обязательные аргументы в таком случае: (required)
+    // void printPerson({required String name, int age = 22}) {}
+
+    // функции:
+    // вообще так:
+    // int sum(int a, int b) { return a + b; }
+    // но можно сократить:
+    // int sum(int a, int b) => a + b;
+    // и убрать тип функции (сам допедрит по return или их отсутствию (для void)):
+    // sum(int a, int b) => a + b;
+
+    // также функциями можно оперировать как объектами: (как в питоне)
+    // https://metanit.com/dart/tutorial/3.4.php
+
+    // анонимные функции: (прикольная штука, можно как lambda в питоне использовать)
+    // https://metanit.com/dart/tutorial/3.5.php
+
+    // замыкание - грубо говоря локальный static + функция, мегакрутая штука
+    // https://metanit.com/dart/tutorial/3.6.php
+  }
+
+  {}
 }
