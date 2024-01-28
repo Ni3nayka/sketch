@@ -216,5 +216,23 @@ void main() {
     // https://metanit.com/dart/tutorial/3.6.php
   }
 
-  {}
+  {
+    // классы:
+    // https://metanit.com/dart/tutorial/4.1.php
+    // создание объекта класса Person:
+    // class Person{ } // пустой класс Person, кстати создаются они только в global пространстве
+    // Person tom = Person();
+    // self (python) ~= this (Dart)
+
+    // import 'person.dart'; // подключаем файл с классом Person
+
+    // late - отложить инициализацию на потом (и чтобы без null)
+
+    // Person? tom; // склепали null объект
+    // tom.age = 38; // ошибка ибо объект null
+    // tom?.age = 38; // не выполняется (за счет ? )
+
+    // String? text; // null
+    // ... return text!; // типо точно возвращаем String (не null)
+  }
 }
